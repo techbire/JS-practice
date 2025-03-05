@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="first.js"></script>
+    <script src="functions.js"></script>
 </head>
 <body>
     <script>
@@ -17,6 +17,30 @@
 <h3>Input: </h3>
 <h3>Expected Output: </h3>
 
+<script>
+    function addition(a,b){
+        a=parseInt(a);
+        b=parseInt(b);
+        alert(a+b)
+    }
+    addition(4,5)
+    
+    var a=parseInt(prompt("enter first number"))
+    var b=parseInt(prompt("enter second number"))
+    var res=a+b;
+    alert(res)
+    if(confirm("press ok to confirm ")){
+        document.write("you pressed ok")
+    }
 
+    else{
+        document.write("you pressed cancel")
+    }
+
+
+
+
+
+    </script>
 </body>
 </html>

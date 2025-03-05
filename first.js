@@ -65,5 +65,9 @@
 // console.log(fact);\
 
 
-var obj={name:"ansh",age:20,city:"ballia",display:function(){console.log("print")}}
-console.log(obj);
+// var obj={name:"ansh",age:20,city:"ballia",display:function(){console.log("print")}}
+// console.log(obj);
+
+// for(i in obj){
+//     document.write(`${i}:${obj[i]}`)
+// }
