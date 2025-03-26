@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //body->div->h1->introduction
+
+        var div1=document.createElement("h1");
+        var h1=document.createElement("h1");
+        var p=document.createElement("p");
+        h1.textContent="Introduction"
+        // document.body.append(div1,h1,h2,h3,"hello")
+        var button=document.createElement("button")
+        var img1=document.createElement("img")
+        img1.setAttribute("src","download.jpg")
+        button.textContent="click dom"
+        p.textContent="dom elements"
+        h1.textContent="introduction"
+        document.body.append(div1,p)
+        div1.append(h1,button,img1)
+        div1.removeChild(h1)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clicked()">click button</button>
+    <button id="b1">click dom</button>
+    <button ondblclick="add(2,3)">ddl click</button>
+    <button id="b2">dblclick dom</button>
+    <div id="div1" oncontextmenu="change('green')"></div>
+
+    <script>
+
+        function change(element){
+            document.getElementById("div1").style
+            backgroundColor=element
+        }
+
+        function add(a,b){
+            alert(a+b)
+        }
+
+        function clicked(){
+            alert("wlecome user")
+        }
+        document.getElementById("b1").addEventListener("click",clicked2)
+        function clicked2(){
+            alert("welcome dom user")
+        }
+
+    </script>
+</body>
+</html>
