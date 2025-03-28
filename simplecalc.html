@@ -13,8 +13,10 @@
 
     <input type="number" id="num1" placeholder="enter the first number">
     <input type="number" id="num2" placeholder="enter the second number">
+    <input type="color" id="text">
+   
 
-
+<button onClick="a()">setcolor</button>
     
     <button id="b1" onclick="calculate('+')">+</button>
     <button id="b2" onclick="calculate('-')">-</button>
@@ -40,9 +42,11 @@
                 case '/':result=num2!=0?num1/num2:"divide by zero" 
                 break;
                 
-            }
-document.getElementById("result").innerHTML=result}
-
+            }}
+function a(){
+var colorValue = document.getElementById("text").value;  
+document.body.style.backgroundColor=colorValue;
+}
     </script>
 
 
