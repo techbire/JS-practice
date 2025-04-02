@@ -11,6 +11,7 @@
     <h1>Dynamic Task Manager</h1>
     <input type="text" id="t1" >
     <input type="submit"  value="Add Task" onclick="addTask()">
+    <button  value="Delete" onclick="delTask()"> <span>Delete</span></button>
     
 
     <script>
@@ -27,7 +28,15 @@
             document.body.append(ul)
             document.getElementById("t1").value=""
          }
-              
+        } 
+         function delTask() {
+            var ul = document.querySelector("ul");
+            if (ul) {
+                ul.remove();
+            } else {
+                alert("No tasks to delete!");
+            }
+
         }
     </script>
 </body>
