@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Document</title>  
+    <style>  
+        #b3 {  
+            background-color: red;  
+        }  
+
+        .box {  
+            width: 100px;  
+            height: 100px;  
+            margin-bottom: 20px;  
+        }  
+
+        #div1 {  
+            background-color: rgb(138, 233, 233);  
+        }  
+
+        #div2 {  
+            background-color: yellow;  
+        }  
+
+        #div3 {  
+            background-color: lightgreen;  
+        }  
+    </style>  
+</head>  
+
+<body>  
+
+    <button id="b3">Click me</butto>  
+
+    <div id="div1" class="box"></div>  
+    <div id="div2" class="box"></div>  
+    <div id="div3" class="box"></div>  
+
+    <script>  
+        // Functionality for div1  
+        document.getElementById("div1").addEventListener('mousedown', function() {  
+            changeDivColor('div1', 'green');  
+        });  
+
+        document.getElementById("div1").addEventListener('mousemove', function(event) {  
+            displayCoords(event, 'div1');  
+        });  
+
+        document.getElementById("div1").addEventListener('mouseenter', function() {  
+            changeDivColor('div1', 'green');  
+        });  
+
+        document.getElementById("div1").addEventListener('mouseleave', function() {  
+            changeDivColor('div1', 'aqua');  
+        });  
+
+        function changeDivColor(divId, color) {  
+            document.getElementById(divId).style.backgroundColor = color;  
+        }  
+
+        function displayCoords(event, divId) {  
+            var x = event.clientX;  
+            var y = event.clientY;  
+            var result = 'x coords are ' + x + ' y coords are ' + y;  
+            document.getElementById(divId).innerHTML = result;  
+        }  
+
+        // Functionality for div2  
+        document.getElementById("div2").addEventListener('mouseenter', function() {  
+            changeDivColor('div2', 'orange');  
+        });  
+
+        document.getElementById("div2").addEventListener('mouseleave', function() {  
+            changeDivColor('div2', 'yellow');  
+        });  
+
+        // Functionality for div3 - clicking changes its color  
+        document.getElementById("div3").addEventListener('click', function() {  
+            changeDivColor('div3', 'blue');  
+        });  
+
+        // Button functionality for right-click  
+        document.getElementById("b3").addEventListener('contextmenu', function(event) {  
+            event.preventDefault();  
+            alert("Button right clicked");  
+        });  
+    </script>  
+</body>  
+</html>

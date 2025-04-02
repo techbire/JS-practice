@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    
+</head>
+<body>
+    
+    <h1>Dynamic Task Manager</h1>
+    <input type="text" id="t1" >
+    <input type="submit"  value="Add Task" onclick="addTask()">
+    
+
+    <script>
+        function addTask() {
+        var text=document.getElementById("t1").value
+         if (text == "") {
+            alert("please enter some task")
+         }
+         else{
+            var ul=document.createElement("ul")
+            var li=document.createElement("li")
+            li.textContent=text
+            ul.appendChild(li)
+            document.body.append(ul)
+            document.getElementById("t1").value=""
+         }
+              
+        }
+    </script>
+</body>
+</html>

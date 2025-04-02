@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b3">click</button>
+    <div id="div1"></div>
+<input type="text" onkeypress="press1()">
+<input type="text" onkeydown="press2()">
+<input type="text" onkeyup="press3()">
+
+<form>
+
+<input type="text" placeholder="enter" onblur="change1('red')"><br>
+<input type="text" placeholder="enter" onfocus="change2('blue')"><br>
+<input type="text" placeholder="enter" onblur="change('red')"><br>
+
+
+</form>
+<script>
+    function press1(){
+        alert("pressed!");
+    }
+
+    function press2(){
+        alert("down!");
+    }
+
+
+    function press3(){
+        alert("up!");
+    }
+</script>
+</body>
+</html>
