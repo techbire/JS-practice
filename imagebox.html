@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+
+        }
+        .gallery{
+           
+            display: flex;
+            flex-wrap : wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .gallery img{
+            height: 250px;
+            width: 250px;
+            border: 2px solid white;
+            cursor:pointer;
+
+        }
+        #lightbox{
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0, 0,0.8);
+            display : none;
+            justify-content: center;
+            align-items: center;
+        }
+        #lightbox img{
+            height: 300px;
+            width: 400px;
+            background-color:  black;
+            border: 2px solid white;
+            padding: 4px;
+        }
+        .arrow{font-size: 3rem;
+        color: white;
+        position: absolute;
+        top:50%;
+        cursor: pointer;
+        transform: translateY(-50%);
+        padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class ="gallery">
+        <img src="https://i.pinimg.com/736x/65/3d/5a/653d5ab97e6db0d71369ee99877e7f7a.jpg">
+        <img src="https://i.pinimg.com/736x/59/97/2f/59972f119baaa903c56414751ad28218.jpg">
+        <img src="https://i.pinimg.com/736x/e0/44/44/e0444457c980dd7dd208c17820249752.jpg">
+        <img src="https://i.pinimg.com/736x/b4/64/66/b464666aa6f8f1b8f48f7b90b7d11fe8.jpg">
+        <img src="https://i.pinimg.com/736x/65/3d/5a/653d5ab97e6db0d71369ee99877e7f7a.jpg">
+        <img src="https://i.pinimg.com/736x/59/97/2f/59972f119baaa903c56414751ad28218.jpg">
+        <img src="https://i.pinimg.com/736x/e0/44/44/e0444457c980dd7dd208c17820249752.jpg">
+        <img src="https://i.pinimg.com/736x/b4/64/66/b464666aa6f8f1b8f48f7b90b7d11fe8.jpg">
+    </div>
+    <div id="lightbox">
+        <div class="arrow" id="left">&#10094</div>
+        <img src="">
+    </div>
+
+<script>
+    var lightbox=document.getElementById("lightbox");
+    var lightboxImg=lightbox.querySelector("img");
+    var images=document.querySelectorAll(".gallery img");
+    var leftArrow=document.getElementById("left");
+    var rightArrow=document.getElementById("right");
+    var currentIndex=0;
+    for(let i=0; i<images.length; i++){
+        images[i].addEventListener("click",function(){
+            currentIndex=i;
+            lightbox.style.display="flex";
+            lightboxImg.src=this.src;
+        });
+    }
+    leftArrow.addEventListener("click",function(){
+        currentIndex--;
+        if(currentIndex<0){
+            currentIndex=images.length-1;
+        }
+        lightboxImg.src=images[currentIndex].src;
+    });
+    
+    rightArrow.addEventListener("click",function(){
+        currentIndex++;
+        if(currentIndex>=images.length){
+            currentIndex=0;
+        }
+        lightboxImg.src=images[currentIndex].src;
+    });
+
+    zx
+</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightblue;
+            flex-direction: column;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-image {
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        .btn {
+            background-color: lightcoral;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: darkred;
+            color: white;
+        }
+        .thumbnail-container {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 5px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+        .thumbnail:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <img src="pic1.jpg" class="main-image" id="mainImage">
+        <div class="controls">
+            <button class="btn" id="prev" onclick="prevImage()">Prev</button>
+            <button class="btn" id="next" onclick="nextImage()">Next</button>
+        </div>
+        <div class="thumbnail-container">
+            <img src="pic1.jpg" class="thumbnail" onclick="changeImage('pic1.jpg')">
+            <img src="pic2.jpg" class="thumbnail" onclick="changeImage('pic2.jpg')">
+            <img src="pic3.jpg" class="thumbnail" onclick="changeImage('pic3.jpg')">
+        </div>
+    </div>
+
+    <!-- <script>
+        let images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg'];
+        let currentIndex = 0;
+        let mainImage = document.getElementById('mainImage');
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            mainImage.src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            mainImage.src = images[currentIndex];
+        }
+
+        function changeImage(imageSrc) {
+            mainImage.src = imageSrc;
+            currentIndex = images.indexOf(imageSrc);
+        }
+    </script> -->
+
+
+    <script>
+        let currentIndex=0;
+        var mi=document.getElementById("mainImage")
+        var thumbnails=document.querySelectorAll(".thumbnail")
+        for(let i=0;i<thumbnails.length;i++){
+            thumbnails[i].addEventListener("click",function(){
+                mi.src=thumbnails[i].src
+                currentIndex=i
+            })
+        }
+        document.getElementById("prev").addEventListener("click",function(){
+            currentIndex=(currentIndex-1+thumbnails.length)%thumbnails.length
+            mi.src=thumbnails[currentIndex].src
+        })
+
+        document.getElementById("next").addEventListener("click",function(){
+            currentIndex=(currentIndex+1)%thumbnails.length
+            mi.src=thumbnails[currentIndex].src
+        })
+
+        
+    </script>
+</body>
+</html>
