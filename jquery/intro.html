@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #div1{height: 300px;width: 300px;border:2px solid black;}
+
+        </style>
+</head>
+<body>
+    <p>jquery selector</p>
+    <p id="para1">paragraph</p>
+    <p id="para2">paragraph</p>
+    <div id="div1">div</div>
+    <script>
+        // $(document).ready(function(){
+        //     $("p").click(function(){
+
+        //     })
+        // })
+        $(document).ready(function(){
+            $("para1").dblclick(function(){
+                $(p).hide();
+            })
+        })
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            })
+        })
+        $(document).ready(function(){
+            $("#div1").click(function(){
+                $("#div1").css("background-color","pink");
+            })
+        })
+
+        $(document).ready(function(){
+            $("#div1").mousedown(function(){
+                $("#div1").css("background-color","red");
+            })
+        })
+        
+    </script>
+</body>
+</html>

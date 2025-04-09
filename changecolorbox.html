@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>click to change bg color</h2>
+    <div id="colorbox"></div>
+    <button onclick="changesColor()">Change Color</button>
+    <style>
+        body{
+            background-color: black;
+        }
+        #colorbox{
+            height: 200px;
+            width: 200px;
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        button{
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+        button:active{
+            background-color: #004080;
+        }
+        h2{
+            text-align: center;
+            color: #f0f0f0;
+        }
+        </style>
+
+</body>
+<script>
+    const colors=["red","blue","green","yellow","pink","purple"];
+    const box=document.querySelector(".box");
+    function changesColor(){
+        const randomIndex=Math.floor(Math.random()*colors.length);
+        box.style.backgroundColor=colors[randomIndex];
+    }
+</script>
+
