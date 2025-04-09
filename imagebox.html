@@ -100,7 +100,13 @@
         lightboxImg.src=images[currentIndex].src;
     });
 
-    zx
+
+    lightbox.addEventListener("click",function(){
+      if(e.target==lightbox){
+        lightbox.style.display="none";
+    //   }
+    });
+
 </script>
 
 </body>
